@@ -1,0 +1,33 @@
+{
+  "name": "objdect",
+  "version": "0.1.0",
+  "description": "objdect front end",
+  "main": "objdect/js/main.jsx",
+  "author": "quyuyi",
+  "license": "MIT",
+  "repository": {},
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.18.3",
+    "eslint-plugin-react-hooks": "2.3.0",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10"
+  },
+  "dependencies": {
+    "jsonlint": "1.6.3",
+    "moment": "^2.24.0",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "16.12.0"
+  }
+}

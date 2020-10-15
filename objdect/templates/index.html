@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Objection Detection</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="shortcut icon" href="#">
+    </head>
+
+    <body>
+        <!--Nav bar-->
+        <div class="heading">
+            <a href="/"><p style="font-size: 30px; display: inline; font-weight: bold;">Object Detection</p></a>
+        </div>
+        <hr>
+        <br>
+
+        <!--entry point for JavaScript to add the feed content-->
+        <div id="reactEntry">
+            Loading ...
+          </div>
+          <!-- Load JavaScript -->
+          <script type="text/javascript" 
+          src="{{ url_for('static', filename='js/bundle.js') }}">
+          </script>
+    </body>
+</html>
