@@ -4,7 +4,7 @@ import flask
 import objdect
 
 
-@insta485.app.route('/api/upload/',
+@objdect.app.route('/api/upload/',
                     methods=["GET", "POST"])
 def upload():
     """Upload video for analysis."""
@@ -12,3 +12,10 @@ def upload():
     code = 200
     
     return flask.jsonify(**context), code
+
+@objdect.app.route('/api/get_video',
+                    methods=["GET"])
+def get_movie():
+    """Return video for analysis."""
+    filename = 'var/uploads/man-walking-with-a-laggage.mov'
+    return flask.send_file(filename, mimetype='mov')
