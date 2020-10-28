@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {drawImage} from './utils';
+import {drawImageProp} from './utils';
 
 class Video extends React.Component {
   canvasRef = React.createRef();
@@ -13,9 +13,9 @@ class Video extends React.Component {
   constructor (props) {
     super(props);
     this.drawFrame = this.drawFrame.bind(this);
-    this.drawPrediction = this.drawPrediction.bind(this);
     this.startVideo = this.startVideo.bind(this);
     this.stopVideo = this.stopVideo.bind(this);
+    this.fetchPrediction = this.fetchPrediction.bind(this);
   }
 
   componentDidMount() {
@@ -30,15 +30,27 @@ class Video extends React.Component {
     }
   }
 
-  requestAPI(url) {    
-    fetch(url, {credentials: 'same-origin'})
+  fetchPrediction(ctx, img) {    
+    fetch("/api/predict/", {
+      method: "POST",
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "image": img,
+        "hello": "hello"
+      }),
+    })
       .then((response) => {
         if (!response.ok) throw Error(response.statusText);
-        return response.json;
+        return response.json();
       })
       .then((data) => {
         console.log(data);
         // do something about data
+        drawImageProp(ctx, data.prediction);
+        // ctx.drawImage(data.prediction);
       })
       .catch((error) => console.log(error));
   }
@@ -53,19 +65,26 @@ class Video extends React.Component {
       const ctx = this.canvasRef.current.getContext('2d');
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       // draw the current frame of the video
-      drawImage(ctx, this.videoRef.current);
-      // TODO: predict and draw box
+      drawImageProp(ctx, this.videoRef.current);
+      // TODO: predict and draw box // fetchPrediction()
       // Alternatively: server returns a prediction with box 
       // and directly draw the prediction
-      requestAnimationFrame(() => {
-        if (!this.paused) {
-          setTimeout(() => {
-            if (!this.paused) {
-              this.videoRef.current.play();
-            }
-          }, 33); // 30 FPS
+      this.canvasRef.current.toBlob(blob=>{
+        let reader = new FileReader();
+        reader.onload = file => {
+          this.fetchPrediction(ctx, file.target.result);
         }
-      });
+        reader.readAsDataURL(blob);
+      }, 'image/jpeg');
+      // requestAnimationFrame(() => {
+      //   if (!this.paused) {
+      //     setTimeout(() => {
+      //       if (!this.paused) {
+      //         this.videoRef.current.play();
+      //       }
+      //     }, 33); // 30 FPS
+      //   }
+      // });
     }
   }
 
@@ -84,14 +103,14 @@ class Video extends React.Component {
   //   draw();
   // }
 
-  drawPrediction(ctx, frameCount) {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    let imageObj = new Image();
-    imageObj.onload = () => {
-      ctx.drawImage(imageObj , 0, 0);
-    }
-    imageObj.src = '/api/predict/'+frameCount
-  }
+  // drawPrediction(ctx, img) {
+  //   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  //   let imageObj = new Image();
+  //   imageObj.onload = () => {
+  //     ctx.drawImage(imageObj , 0, 0);
+  //   }
+  //   imageObj.src = img
+  // }
 
   startVideo() {
     this.paused = false;

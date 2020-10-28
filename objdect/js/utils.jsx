@@ -1,4 +1,4 @@
-export function  drawImage (ctx, img){
+export function  drawImageProp (ctx, img){
 
     let x = 0;
     let y = 0;

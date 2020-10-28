@@ -11,7 +11,7 @@ set -Eeuox pipefail
 # Set FLASK_DEBUG, FLASK_APP and INSTA485_SETTINGS environment variables
 export FLASK_DEBUG=True
 export FLASK_APP=objdect
-export INSTA485_SETTINGS=config.py
+export OBJDECT_SETTINGS=config.py
 
 # compile js
 npx webpack

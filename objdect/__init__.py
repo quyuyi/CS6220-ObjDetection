@@ -19,3 +19,4 @@ app.config.from_envvar('OBJDECT_SETTINGS', silent=True)
 # import objDect.api  # noqa: E402  pylint: disable=wrong-import-position
 import objdect.views  # noqa: E402  pylint: disable=wrong-import-position
 import objdect.api # noqa: E402  pylint: disable=wrong-import-position
+# import model_zoo

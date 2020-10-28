@@ -1,10 +1,22 @@
 """Views utility functions."""
 import os
+import io
+from PIL import Image
 import shutil
 import tempfile
 import hashlib
+import base64
+import numpy as np
+import cv2
 import flask
 import objdect
+
+
+def readb64(s):
+    z = s[s.find('/9'):]
+    # im = Image.open(io.BytesIO(base64.b64decode(z))).save('result.jpg')
+    im = Image.open(io.BytesIO(base64.b64decode(z)))
+    return im
 
 
 def sha256sum(filename):

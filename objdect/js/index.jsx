@@ -5,6 +5,7 @@ import Video from './video';
 
 // This method is only called once
 ReactDOM.render(
-    <Video parameter="input"/>,
+    // <Video parameter="input"/>,
+    <img src="/api/predict/" />,
     document.getElementById('reactEntry'),
 );
