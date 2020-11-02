@@ -5,11 +5,7 @@ Create virtual environment for both Python and Javascript.
 ```
 
 ## Run the app
-Compile the JS code,
-```
-npx webpack
-```
-Launch the backend server,
+Compile the JS code, and launch the backend server,
 ```
 $ ./bin/objdectRun
 ```
