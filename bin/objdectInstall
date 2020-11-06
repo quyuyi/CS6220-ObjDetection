@@ -28,7 +28,7 @@ source env/bin/activate
 set -u
 
 # install backend
-pip install -e .
+pip install -r requirements.txt 
 
 # install frontend
 npm install .
