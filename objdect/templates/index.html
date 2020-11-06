@@ -1,26 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Objection Detection</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-        <link rel="shortcut icon" href="#">
-    </head>
+<html>
+<title>Object Detection Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<body>
 
-    <body>
-        <!--Nav bar-->
-        <div class="heading">
-            <a href="/"><p style="font-size: 30px; display: inline; font-weight: bold;">Object Detection</p></a>
-        </div>
-        <hr>
-        <br>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">Object Detection</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a> -->
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  </div>
+</div>
 
-        <!--entry point for JavaScript to add the feed content-->
-        <div id="reactEntry">
-            Loading ...
-          </div>
-          <!-- Load JavaScript -->
-          <script type="text/javascript" 
-          src="{{ url_for('static', filename='js/bundle.js') }}">
-          </script>
-    </body>
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Object Detection on the Edge</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Object Detection on the Edge</span><br>
+    <!-- <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span> -->
+    <p><a href="#predict" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Get started</a></p>
+  </div> 
+</header>
+
+<!-- About Section -->
+<div class="w3-container centered" style="padding:128px 16px" id="predict">
+  <!--entry point for JavaScript to add the feed content-->
+  <div id="reactEntry">
+    Loading ...
+  </div>
+  <!-- <p class="w3-center w3-large">Key features of our company</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+  </div> -->
+</div>
+
+<!-- Load JavaScript -->
+<script type="text/javascript" 
+src="{{ url_for('static', filename='js/bundle.js') }}">
+</script>
+</body>
 </html>

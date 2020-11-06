@@ -1,61 +1,80 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Select from 'react-select';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Predict from './predict';
 
 class Upload extends React.Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            seelctedFile: null,
-        };
-    }
+  constructor (props) {
+    super(props);
+    this.state = {
+      selectedFile: null,
+      uploaded: false,
+    };
 
-    onFileChange = event => {
-        this.setState({seelctedFile: event.target.files[0]});
-    }
+    this.onFileChange = this.onFileChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
 
-    onFileUpload = () => {
-        fetch("api/upload", {
-            credentials: 'same-origin',
-            method,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({}),
-          })
-            .then((data) => {
-              const { num_likes: numLikes } = this.state;
-              const { status } = data;
-              if (status === 204) {
-                this.setState({
-                  num_likes: numLikes - 1,
-                  logname_likes_this: 0,
-                });
-              } else if (status === 201) {
-                this.setState({
-                  num_likes: numLikes + 1,
-                  logname_likes_this: 1,
-                });
-              }
-            })
-            .catch((error) => console.log(error));
-    }
+  onFormSubmit(event) {
+    event.preventDefault();
+    console.log("try to upload");
+    const data = new FormData(event.target);
+    fetch("/api/upload/", {
+      credentials: 'same-origin',
+      method: 'POST',
+      body: data,
+    })
+    .then((data) => {
+      console.log(data);
+      this.setState({
+        uploaded: true,
+      });
+    })
+    .catch((error) => console.log(error));
+  }
 
+  onFileChange(event) {
+    event.preventDefault();
+    console.log(event.target.files[0]);
+    this.setState({selectedFile: event.target.files[0]});
+  }
 
-    render () {
-        return (
-            <div className="upload">
-                <form>
-                    <input type="file" onChange={this.onFileChange} />
-                    <button onClick={this.onFileUpload}>Upload</button>
-                </form>
-            </div>
-        );
-    }
+  renderUpload() {
+    return (
+      <div className="chooseFile">
+        <Container>
+          <Row><h3>Upload a video</h3></Row>
+          <Row>
+            <form onSubmit={this.onFormSubmit}>
+            <span><input type="file" name="video" onChange={this.onFileChange} /></span>
+            <span><input type="submit" /></span>
+            </form>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+
+  renderNext() {
+    return (
+      <div className="enterPredict">
+        <Predict />
+      </div>
+    );
+  }
+
+  render () {
+    const uploaded = this.state.uploaded;
+    console.log(uploaded);
+    return (
+      <div className="upload">
+        {(uploaded) ? this.renderNext() : this.renderUpload()}
+      </div>
+    );
+  }
 }
 
 export default Upload;

@@ -17,9 +17,9 @@ import flask
 import objdect
 
 
-def gen():
+def gen(filename):
     app_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    prefix = app_path+'/var/output/yolov3dark24/'
+    prefix = app_path+'/var/output/' + filename + '/'
     intervals = json.loads(json.load(open(prefix+'intervals.json')))
     counter = 0
     while counter < len(intervals):
@@ -33,7 +33,12 @@ def gen():
 
 @objdect.app.route('/api/predict/', methods=["GET","POST"])
 def video_feed():
-    return flask.Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return flask.Response(gen(filename='yolov3dark24'), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+@objdect.app.route('/api/comparison/', methods=["GET","POST"])
+def video_feed_comparison():
+    return flask.Response(gen(filename='yolov3dark24'), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 # @objdect.app.route('/api/predict/<int:frame>',

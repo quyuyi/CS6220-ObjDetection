@@ -1,3 +1,13 @@
+model_zoo/
+
+# old version html
+objdect/templates/ugly.html
+
+# old version jsx
+objdect/js/canvas.jsx
+objdect/js/test.jsx
+objdect/js/utils.jsx
+
 # Python
 *.pyc
 __pycache__/
