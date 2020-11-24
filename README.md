@@ -21,9 +21,8 @@ Navigate to `localhost:8000`
 
 (2) run demo_v1_1.ipynb. First, mount your system to your drive. Second, pip install the packages in the code segment. Third, restart Runtime.
 
-(3) Run the left code blocks sequentially until second last block.
+(3) Run the left code blocks sequentially until second last block. Go to output directory and create a directory yolov3mobile${fps}  (e.g. yolov3mobile10)
 
 (4) In the last block, set the fps you want and then run it.
 
-(5) The results will be in output directory in your google drive.
-
+(5) The results will be in output/yolov3mobile{fps} directory in your google drive.
