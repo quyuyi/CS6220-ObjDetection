@@ -39,12 +39,12 @@ class Predict extends React.Component {
         <Container fluid>
         <Row className="justify-content-md-center">
           <Col md={6}>
-            <Row><p>W/o frame skipping</p></Row>
-            <Row><img className="video" src="/api/predict/" /></Row>
+            <Row className="justify-content-md-center"><p>W/o frame skipping</p></Row>
+            <Row><img className="video" src="/api/comparison/" /></Row>
           </Col>
           <Col md={6}>
-            <Row><p>W/ frame skipping</p></Row>
-            <Row><img className="video" src="/api/comparison/" /></Row>
+            <Row className="justify-content-md-center"><p>W/ frame skipping</p></Row>
+            <Row><img className="video" src="/api/predict/" /></Row>
           </Col>
         </Row>
         </Container>

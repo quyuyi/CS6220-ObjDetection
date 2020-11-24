@@ -17,10 +17,11 @@ import flask
 import objdect
 
 
-def gen(filename):
+def gen(filename, interval):
     app_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    prefix = app_path+'/var/output/' + filename + '/'
-    intervals = json.loads(json.load(open(prefix+'intervals.json')))
+    prefix = app_path+'/var/output/fps24/' + filename + '/'
+    # intervals = json.loads(json.load(open(prefix+'intervals.json')))
+    intervals = json.loads(json.load(open(prefix+interval)))
     counter = 0
     while counter < len(intervals):
         time.sleep(intervals[counter])
@@ -33,12 +34,18 @@ def gen(filename):
 
 @objdect.app.route('/api/predict/', methods=["GET","POST"])
 def video_feed():
-    return flask.Response(gen(filename='yolov3dark24'), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='man_with_luggage', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='man_walking_in_tokyo', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='president_on_tech_green', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return flask.Response(gen(filename='night_drive', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 @objdect.app.route('/api/comparison/', methods=["GET","POST"])
 def video_feed_comparison():
-    return flask.Response(gen(filename='yolov3dark24'), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='man_with_luggage', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='man_walking_in_tokyo', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='president_on_tech_green', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return flask.Response(gen(filename='night_drive', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 # @objdect.app.route('/api/predict/<int:frame>',
