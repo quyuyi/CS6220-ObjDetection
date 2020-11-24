@@ -13,7 +13,7 @@ Navigate to `localhost:8000`
 
 
 
-## Colab for frame skipping in the setting of combining boosting tracker and YOLO MobileNet (optional as we later convert the jupternotebook into local one)
+## Colab for frame skipping in the setting of combining boosting tracker and YOLO MobileNet (optional as we later convert the jupternotebook into local python file to run all experiments)
 
 (0) The base of the code is from https://github.com/khchow-gt/object-detection-zoo & https://www.dropbox.com/s/vhhnp3wt4oztkqz/model_weights.zip?dl=0
 
