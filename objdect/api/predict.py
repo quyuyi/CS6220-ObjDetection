@@ -36,16 +36,16 @@ def gen(filename, interval):
 def video_feed():
     # return flask.Response(gen(filename='man_with_luggage', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
     # return flask.Response(gen(filename='man_walking_in_tokyo', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
-    # return flask.Response(gen(filename='president_on_tech_green', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
-    return flask.Response(gen(filename='night_drive', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return flask.Response(gen(filename='president_on_tech_green', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='night_drive', interval="improved.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 @objdect.app.route('/api/comparison/', methods=["GET","POST"])
 def video_feed_comparison():
     # return flask.Response(gen(filename='man_with_luggage', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
     # return flask.Response(gen(filename='man_walking_in_tokyo', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
-    # return flask.Response(gen(filename='president_on_tech_green', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
-    return flask.Response(gen(filename='night_drive', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return flask.Response(gen(filename='president_on_tech_green', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return flask.Response(gen(filename='night_drive', interval="basecase.json"), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 # @objdect.app.route('/api/predict/<int:frame>',

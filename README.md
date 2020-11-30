@@ -1,20 +1,15 @@
-## Environment Setup
-Create virtual environment for both Python and Javascript.
-```
-./bin/objdectInstall
-```
+# Object detection on the edge
+*CS6220 Big Data Systems and Analytics Final Project, Gatech*
 
-## Run the app
-Compile the JS code, and launch the backend server,
-```
-$ ./bin/objdectRun
-```
-Navigate to `localhost:8000`
+## Introduction
 
 
 
-## Colab for frame skipping in the setting of combining boosting tracker and YOLO MobileNet (optional as we later convert the jupternotebook into local python file to run all experiments)
+## Frame Skipping: Boosting Tracker
 
+Colab for frame skipping in the setting of combining boosting tracker and YOLO MobileNet (optional as we later convert the jupternotebook into local python file to run all experiments)
+
+### How to run
 (0) The base of the code is from https://github.com/khchow-gt/object-detection-zoo & https://www.dropbox.com/s/vhhnp3wt4oztkqz/model_weights.zip?dl=0
 
 (1) download all the files in this google drive [https://drive.google.com/drive/folders/1mR1U6gVOxfXT8w__yRZB-nsBTibKDh8G?usp=sharing] link to your google drive.
@@ -26,3 +21,29 @@ Navigate to `localhost:8000`
 (4) In the last block, set the fps you want and then run it.
 
 (5) The results will be in output/yolov3mobile{fps} directory in your google drive.
+
+## WEB visualization
+### Environment Setup
+Create virtual environment for both Python and Javascript.
+```
+./bin/objdectInstall
+```
+
+### How to run
+Compile the JS code, and launch the backend server,
+```
+$ ./bin/objdectRun
+```
+Navigate to `localhost:8000` and play with the web!
+
+
+
+
+## Contributors
+*ordered according to the last name*
+
+Aslihan Celik\
+Connor Guerin\
+Tienchi Hsin\
+Ming Ying Li\
+Yuyi Qu
