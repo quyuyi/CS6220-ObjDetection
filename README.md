@@ -5,8 +5,8 @@ The project focuses on speeding up objection detection and improving accuracy th
 
 ## Structure
 ![structure](structure.png)
-The structure of our project is shown as above. The pre-trained object detectors can be found [here](https://github.com/khchow-gt/object-detection-zoo) and the pre-trained weights can be found [here](https://www.dropbox.com/s/vhhnp3wt4oztkqz/model_weights.zip?dl=0). We implemented code for a frame-skipping strategy component, a ensemble component, a [Jetson Nano component](./jetson-nano) and 
-a [web application component](./objdect).
+The structure of our project is shown as above. The pre-trained object detectors can be found [here](https://github.com/khchow-gt/object-detection-zoo) and the pre-trained weights can be found [here](https://www.dropbox.com/s/vhhnp3wt4oztkqz/model_weights.zip?dl=0). We implemented code for a frame-skipping strategy component, a ensemble component, a Jetson Nano component and 
+a web application component.
 
 ## Frame Skipping: Boosting Tracker
 
