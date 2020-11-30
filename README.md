@@ -39,11 +39,16 @@ Navigate to `localhost:8000` and play with the web!
 
 
 ## Object detection on Jetson Nano
-## How to run
+### How to run
 Copy real_time_detection_with_tracker.py and real_time_detection_with_tracker.py to Jetson Nano with a camera connected.
 ```
 $ python real_time_detection_with_tracker.py
 ```
+
+## Object detection template code
+### How to run
+1. Copy object_detection_experiment_template.ipynb to Colab.
+2. Run in Colab's environment.
 
 ## Contributors
 *ordered according to the last name*
