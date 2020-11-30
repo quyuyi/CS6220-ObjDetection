@@ -1,9 +1,10 @@
 This is the directory to run the object tracking and ensemble methods on a local computer with a GPU
 
-# Installation
+# Installation and Setup
 1. Create a virtual environment
 2. Activate the virtual environment
 3. Install libraries: `pip install -r requirements.txt`
+4. Copy model weight folder into directory from the object-detection-zoo
 
 Requirements are slightly different than the original object detection zoo in order to run on the Windows 10 machine used for testing. The testing and packages used were those compatible with CUDA 10 on a NVIDIA GeForce graphics card, so it is possible that you may need to install a different version of tensorflow.
 
@@ -17,7 +18,6 @@ Choosing 'ensemble' will run the weighted confidence ensemble method of SSD300, 
 
 The object tracking will run regardless of the choice of the model. Output images of video stills with bounding boxes will be saved to an output folder. Note that the output folder must exist before running, and existing images in the output folder will be overwritten for each run.
 
-# 
 
 # Acknowledgement
 This project is developed based on the following repositories:
