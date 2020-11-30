@@ -1,3 +1,5 @@
+This is the directory to run the object tracking and ensemble methods on a local computer with a GPU
+
 # Installation
 1. Create a virtual environment
 2. Activate the virtual environment
