@@ -38,7 +38,12 @@ $ ./bin/objdectRun
 Navigate to `localhost:8000` and play with the web!
 
 
-
+## Object detection on Jetson Nano
+## How to run
+Copy real_time_detection_with_tracker.py and real_time_detection_with_tracker.py to Jetson Nano with a camera connected.
+```
+$ python real_time_detection_with_tracker.py
+```
 
 ## Contributors
 *ordered according to the last name*
