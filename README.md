@@ -1,7 +1,7 @@
 # Object detection on the edge
 *CS6220 Big Data Systems and Analytics Final Project, Gatech*
 
-The project focuses on speeding up objection detection and improving accuracy through frame-skipping strategies and ensemble methods. An interactive webpage is built for visualize the results in realtime. The code is deployed to an edge device called Jetson Nano for testing.
+The project focuses on speeding up objection detection and improving accuracy through frame-skipping strategies and ensemble methods. An interactive webpage is built for visualize the results in realtime. The code is deployed to an edge device called Jetson Nano for testing. We constructed a new test dataset [here](https://drive.google.com/drive/folders/1h-TueDG_UWBQgoRhhbBoqFT5XFsb4Ti7?usp=sharing). Check out our demo video [here](https://drive.google.com/file/d/1l6e0qfJ5t5B4aDBSjUOChh4bPue4dWJC/view?usp=sharing).
 
 ## Structure
 ![structure](structure.png)
