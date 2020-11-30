@@ -1,4 +1,4 @@
-This is the directory to run the object tracking and ensemble methods on a local computer with a GPU
+This is the directory to run the object tracking and ensemble methods on a local computer with a GPU. The .py files for models are all originally forked from "object-detection-zoo" repo. Model weight files were too large to upload to github, so these should be copied from the object detection zoo before running.
 
 # Installation and Setup
 1. Create a virtual environment
@@ -6,7 +6,7 @@ This is the directory to run the object tracking and ensemble methods on a local
 3. Install libraries: `pip install -r requirements.txt`
 4. Copy model weight folder into directory from the object-detection-zoo
 
-Requirements are slightly different than the original object detection zoo in order to run on the Windows 10 machine used for testing. The testing and packages used were those compatible with CUDA 10 on a NVIDIA GeForce graphics card, so it is possible that you may need to install a different version of tensorflow.
+Requirements are slightly different than the original object detection zoo in order to run on the Windows 10 machine used for testing. The testing and packages used were those compatible with CUDA 10 on a NVIDIA GeForce graphics card, so it is possible that you may need to install a different version of tensorflow. 
 
 # Running the file
 The ensemble method and standard object tracking are both run using the run.py file. run.py takes command line arguments for video path and model. 
